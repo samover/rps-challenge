@@ -31,8 +31,7 @@ class Rps < Sinatra::Base
     game = Game.new
     @player = session[:player]
     @computer = Computer.new
-    @computer.choose_move
-    @result = game.winner @player.move, @computer.move
+    @result = game.winner @player.move, @computer.choose_move
     erb :duel
   end
 end
